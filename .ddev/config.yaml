@@ -1,4 +1,4 @@
-name: advent
+name: advent2024
 type: cakephp
 docroot: webroot
 php_version: "8.3"

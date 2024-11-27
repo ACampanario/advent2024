@@ -95,5 +95,18 @@ class AddSampleTables extends AbstractMigration
             )
             ->create();
 
+        $this->table('orders')
+            ->addColumn('total', 'decimal', [
+                'default' => 30.00,
+                'precision' => 9,
+                'scale' => 2,
+                'null' => false,
+            ])
+            ->addColumn('created', 'datetime', [
+                'default' => null,
+                'limit' => null,
+                'null' => false,
+            ])
+            ->create();
     }
 }

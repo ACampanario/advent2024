@@ -98,26 +98,6 @@ class PostsTable extends Table
         return $rules;
     }
 
-    public function findOnlyApprovedComments(SelectQuery $query): SelectQuery
-    {
-        return $this->find()
-            ->contain(['Comments' => function ($q) {
-                return $q->where([
-                    'Comments.status' => CommentStatus::APPROVED->value,
-                ]);
-            }]);
-    }
-
-    public function findOnlyCommentsByStatus(SelectQuery $query, string $status): SelectQuery
-    {
-        return $this->find()
-            ->contain(['Comments' => function ($q) use ($status) {
-                return $q->where([
-                    'Comments.status' => CommentStatus::{$status}->value,
-                ]);
-            }]);
-    }
-
     public function findOnlyCommentsByStatusEnum(SelectQuery $query, CommentStatus $status): SelectQuery
     {
         return $this->find()

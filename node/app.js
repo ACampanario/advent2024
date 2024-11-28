@@ -35,7 +35,7 @@ io.on('connection',function (socket) {
     console.log('info',`A client with socket id ${socket.id} connected!`);
 
     // Emitir un mensaje de bienvenida al cliente
-    socket.emit('welcome', 'Bienvenido al servidor Socket.IO');
+    socket.emit('welcome', 'Welcome to Node server!!!');
 });
 
 httpServer.listen(8180);

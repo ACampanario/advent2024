@@ -42,8 +42,8 @@
                 </blockquote>
             </div>
             <div class="related">
-                <h4><?= __('Related Comments') ?></h4>
-                <?php if (!empty($post->comments)) : ?>
+                <h4><?= __('Approved Comments') ?></h4>
+                <?php if (!empty($postWithCommentsApproved->comments)) : ?>
                 <div class="table-responsive">
                     <table>
                         <tr>
@@ -54,7 +54,7 @@
                             <th><?= __('Text') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
-                        <?php foreach ($post->comments as $comment) : ?>
+                        <?php foreach ($postWithCommentsApproved->comments as $comment) : ?>
                         <tr>
                             <td><?= h($comment->id) ?></td>
                             <td><?= h($comment->status) ?></td>
@@ -70,6 +70,37 @@
                         <?php endforeach; ?>
                     </table>
                 </div>
+                <?php endif; ?>
+            </div>
+            <div class="related">
+                <h4><?= __('All Comments') ?></h4>
+                <?php if (!empty($post->comments)) : ?>
+                    <div class="table-responsive">
+                        <table>
+                            <tr>
+                                <th><?= __('Id') ?></th>
+                                <th><?= __('Status') ?></th>
+                                <th><?= __('User Id') ?></th>
+                                <th><?= __('Post Id') ?></th>
+                                <th><?= __('Text') ?></th>
+                                <th class="actions"><?= __('Actions') ?></th>
+                            </tr>
+                            <?php foreach ($post->comments as $comment) : ?>
+                                <tr>
+                                    <td><?= h($comment->id) ?></td>
+                                    <td><?= h($comment->status) ?></td>
+                                    <td><?= h($comment->user_id) ?></td>
+                                    <td><?= h($comment->post_id) ?></td>
+                                    <td><?= h($comment->text) ?></td>
+                                    <td class="actions">
+                                        <?= $this->Html->link(__('View'), ['controller' => 'Comments', 'action' => 'view', $comment->id]) ?>
+                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Comments', 'action' => 'edit', $comment->id]) ?>
+                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Comments', 'action' => 'delete', $comment->id], ['confirm' => __('Are you sure you want to delete # {0}?', $comment->id)]) ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>

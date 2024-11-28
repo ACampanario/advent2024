@@ -43,7 +43,7 @@ class PostsController extends AppController
             ->where(['Posts.id' => $id])
             ->firstOrFail();
         $this->set(compact('post'));
-
+/*
         $post = $this->Posts
             ->find('onlyApprovedComments')
             ->contain(['Users', 'Comments'])
@@ -57,13 +57,13 @@ class PostsController extends AppController
             ->where(['Posts.id' => $id])
             ->firstOrFail();
         $this->set(compact('post'));
-
-        $post = $this->Posts
+*/
+        $postWithCommentsApproved = $this->Posts
             ->find('onlyCommentsByStatusEnum', status:  CommentStatus::APPROVED)
             ->contain(['Users'])
             ->where(['Posts.id' => $id])
             ->firstOrFail();
-        $this->set(compact('post'));
+        $this->set(compact('post', 'postWithCommentsApproved'));
     }
 
     /**

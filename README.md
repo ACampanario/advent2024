@@ -1,4 +1,4 @@
-# Building Dynamic Web Applications with CakePHP and htmx: A Practical Guide
+# Advent Calendar 2024 CakeDC
 
 This project explores and describes practical applications and uses of CakePHP 5 based on PHP 8.3.
 

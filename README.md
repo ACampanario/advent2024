@@ -2,6 +2,8 @@
 
 This project explores and describes practical applications and uses of CakePHP 5 based on PHP 8.3.
 
+(optional) [Using DDEV as environment to run this example](Documentation/Using-DDEV.md)
+
 * [Dynamic Enums (CakePHP 5 / PHP 8.3)](Documentation/CakePHP-Enums.md)
 * [Generate JWT with CakePHP and Authenticate on NodeJS](Documentation/CakePHP-JWT.md)
 * [Optimizing Memory with PHP 8.3 Garbage Collector in CakePHP](Documentation/CakePHP-Garbage-Collector.md)
@@ -9,9 +11,10 @@ This project explores and describes practical applications and uses of CakePHP 5
 Requirements
 ------------
 
+* PostgreSQL 13
 * CakePHP 5.x
 * PHP >= 8.3
-* NodeJS 16
+* NodeJS 18
 
 License
 -------

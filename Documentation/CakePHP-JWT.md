@@ -117,7 +117,7 @@ console.log('listen...');
 ### 5.- Launch the Node server
 
 ```
-$> node node/app.js
+node node/app.js
 ```
 
 connection on client side: https://imgur.com/JjJdUA7

@@ -2,7 +2,7 @@
 
 This project explores and describes practical applications and uses of CakePHP 5 based on PHP 8.3.
 
-* [Dynamic Enums (CakePHP 5 / PHP 8.3)](Documentation/CakePHP-Enums.md) (optional)
+* [Dynamic Enums (CakePHP 5 / PHP 8.3)](Documentation/CakePHP-Enums.md)
 * [Generate JWT with CakePHP and Authenticate on NodeJS](Documentation/CakePHP-JWT.md)
 * [Optimizing Memory with PHP 8.3 Garbage Collector in CakePHP](Documentation/CakePHP-Garbage-Collector.md)
 

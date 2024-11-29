@@ -106,7 +106,7 @@ echo h(PostStatus::list()['published']);	// Print “PUBLISHED”
 ?>
 ```
 
-### 6.-They can be used dynamically in query operations, example to get a post and only your comments approved
+### 6.- They can be used dynamically in query operations, example to get a post and only your comments approved
 
 src/Controller/PostsController.php
 

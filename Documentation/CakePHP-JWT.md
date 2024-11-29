@@ -3,7 +3,7 @@
 ### 1.- We add with composer the library https://github.com/lcobucci/jwt
 
 ```
-$> composer require "lcobucci/jwt"
+composer require "lcobucci/jwt"
 ```
 
 ### 2.- We create the logic to generate the token with the secret phrase
@@ -87,16 +87,16 @@ const JWT_SECRET = 'EBB86CEF-63B0-411E-BA99-55F68E39049C1732552248';
 
 //authentication middleware
 io.use(async(socket, next) => {
-// fetch token from handshake auth sent by FE
-const token = socket.handshake.auth.token;
-try {
-// verify jwt token and get user data and save the user data into socket object, to be used further
-socket.decoded = await jsonwebtoken.verify(token, JWT_SECRET);
-console.log(socket.decoded);
-next();
-} catch (e) {
-// if token is invalid, close connection
-console.log('info', `Not Valid authentication! ${e.message} disconnected!`);
+    // fetch token from handshake auth sent by FE
+    const token = socket.handshake.auth.token;
+    try {
+        // verify jwt token and get user data and save the user data into socket object, to be used further
+        socket.decoded = await jsonwebtoken.verify(token, JWT_SECRET);
+        console.log(socket.decoded);
+        next();
+    } catch (e) {
+        // if token is invalid, close connection
+        console.log('info', `Not Valid authentication! ${e.message} disconnected!`);
 
         return next(new Error(e.message));
     }

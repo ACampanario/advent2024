@@ -1,12 +1,12 @@
 # Generate JWT with CakePHP and Authenticate on NodeJS
 
-### 1.- We add with composer the library https://github.com/lcobucci/jwt
+### 1.- Add with composer the library https://github.com/lcobucci/jwt
 
 ```
 composer require "lcobucci/jwt"
 ```
 
-### 2.- We create the logic to generate the token with the secret phrase
+### 2.- Create the logic to generate the token with the secret phrase
 
 src/Controller/PagesController.php
 
@@ -43,7 +43,7 @@ use Lcobucci\JWT\Signer\Key;
 ?>
 ```
 
-### 3.- In the view of this function we load socket.io and connect to our server and port.
+### 3.- In the view of this function load socket.io and connect to our server and port.
 
 templates/Pages/generate_jwt.php
 
@@ -65,7 +65,7 @@ templates/Pages/generate_jwt.php
 </script>
 ```
 
-### 4.- We create the node server, for example in: node/app.js
+### 4.- Create the node server, for example in: node/app.js
 
 You can check the authentication in the function by using jsonwebtoken.verify for the token received and the secret JWT_SECRET which is the same as the one used when the token was generated.
 
@@ -114,7 +114,7 @@ httpServer.listen(8180);
 console.log('listen...');
 ```
 
-### 5.- We launch the Node server
+### 5.- Launch the Node server
 
 ```
 $> node node/app.js

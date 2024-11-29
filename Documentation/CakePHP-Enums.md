@@ -1,6 +1,6 @@
 # Dynamic Enums (CakePHP 5 / PHP 8.3)
 
-### 1.- We define a constant class of user roles
+### 1.- Define a constant class of user roles
 
 src/Constants/UserRoles.php
 
@@ -17,7 +17,7 @@ class UserRoles
 ?>
 ```
 
-### 2.- We define an Enum class for the status of the posts
+### 2.- Define an Enum class for the status of the posts
 
 src/Enum/PostStatus.php
 
@@ -43,7 +43,7 @@ enum PostStatus: string
 ?>
 ```
 
-### 3.- We define an Enum class for the status of the comments
+### 3.- Define an Enum class for the status of the comments
 
 src/Enum/CommentStatus.php
 
@@ -67,7 +67,7 @@ enum CommentStatus: string
 ?>
 ```
 
-### 4.- We check the dynamic use in the access to the Enums values.
+### 4.- Check the dynamic use in the access to the Enums values.
 
 templates/Pages/enums.php
 
@@ -92,7 +92,7 @@ echo "Post Status: " . $statusValue; // Print “Post Status: published”
 ?>
 ```
 
-### 5.- We can also use its functions, for example “list” for selectors and print its value.
+### 5.- You can also use its functions, for example “list” for selectors and print its value.
 
 ```
 <?php

@@ -52,5 +52,7 @@ nbproject/*
 yarn-debug.log
 yarn-error.log
 
-/js/manifest.json
-/js/assets/
+/webroot/js/manifest.json
+/webroot/js/assets/
+/webroot/hot
+package-lock.json

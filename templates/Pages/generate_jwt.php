@@ -1,5 +1,12 @@
 To start node please go to node dir on root directory and exec 'node app.js'
-<br/><br/>
+<br/>
+<pre>
+$> ddev ssh
+user@advent2024-web:/var/www/html$ cd node
+user@advent2024-web:/var/www/html/node$ node app.js
+</pre>
+
+
 <div id="message"></div>
 
 <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>

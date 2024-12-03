@@ -58,7 +58,13 @@ return function (RouteBuilder $routes): void {
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
         $builder->connect('/pages/jwt', ['controller' => 'Pages', 'action' => 'generateJwt']);
+        $builder->connect('/pages/vite', ['controller' => 'Pages', 'action' => 'vite']);
+
+
         $builder->connect('/pages/gcstatus', ['controller' => 'Pages', 'action' => 'gcStatus']);
+        $builder->connect('/pages/nogcstatus', ['controller' => 'Pages', 'action' => 'nogcStatus']);
+        $builder->connect('/pages/gc_enabled', ['controller' => 'Pages', 'action' => 'gcEnabled']);
+        $builder->connect('/pages/gc_disabled', ['controller' => 'Pages', 'action' => 'gcDisabled']);
 
         /*
          * ...and connect the rest of 'Pages' controller's URLs.

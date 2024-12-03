@@ -1,5 +1,5 @@
-<?php  /// new in php 8.3 and php 8.4
-// Dynamic constants
+<?php  ///
+// Dynamic constants new in php 8.3 and php 8.4
 use App\Constants\UserRoles;
 use App\Enum\PostStatus;
 
@@ -10,7 +10,7 @@ echo "Role Value: " . $roleValue; // Print “Role Value: admin”
 
 ?><br><br><?php
 
-// Dynamic Enum members
+// Dynamic Enum members new in php 8.3 and php 8.4
 $statusName = 'PUBLISHED';
 $statusValue = PostStatus::{$statusName}->value; // Dynamically accesses PostStatus::Published
 echo "Post Status: " . $statusValue; // Print “Post Status: published”
@@ -26,6 +26,6 @@ echo h(PostStatus::list()['published']);
 ?>
 <br><br>
 <ol>
-<li><a href="/posts/view/1">Example use finder to retrieve only appproved comments</a></li>
+<li><a href="/posts/view/1">Example use finder to retrieve only approved comments</a></li>
 <li><a href="/posts">Example print status</a></li>
 </ol>

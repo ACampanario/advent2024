@@ -18,6 +18,7 @@ namespace App\Controller;
 
 use App\Constants\UserRoles;
 use App\Enum\PostStatus;
+use App\Traits\ViteResponseTrait;
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
@@ -42,6 +43,8 @@ use Lcobucci\JWT\Validation\Constraint\IssuedBy;
  */
 class PagesController extends AppController
 {
+    use ViteResponseTrait;
+
     /**
      * Displays a view
      *
@@ -103,44 +106,8 @@ class PagesController extends AppController
         $this->set('token', $token);
     }
 
-
-    public function gcStatus()
+    public function vite()
     {
-// Habilitar el Garbage Collector
-        gc_enable();
-
-        // Estado inicial del Garbage Collector
-        $initialStatus = gc_status();
-
-        // Obtener la tabla de ejemplo (por ejemplo, 'Orders')
-        $ordersTable = TableRegistry::getTableLocator()->get('Orders');
-
-        // Realizar una consulta y usar formatResults para realizar cálculos intensivos
-        $processedResults = $ordersTable->find()
-            ->select(['id', 'total', 'created'])
-            ->formatResults(function ($results) {
-                return $results->map(function ($row) {
-                    // Simular cálculos intensivos
-                    $row->formattedTotal = $row->total * 1.2; // Ejemplo: Agregar impuestos
-                    $row->formattedDate = $row->created->format('Y-m-d H:i:s');
-                    return $row;
-                });
-            })
-            ->toArray(); // Convertir a un array para procesar todos los resultados
-
-        // Estado después de realizar la consulta y cálculos
-        $middleStatus = gc_status();
-
-        // Liberar resultados manualmente
-        unset($processedResults);
-
-        // Forzar la recolección de ciclos
-        $cyclesCollected = gc_collect_cycles();
-
-        // Estado final del Garbage Collector
-        $finalStatus = gc_status();
-
-        // Pasar datos a la vista
-        $this->set(compact('initialStatus', 'middleStatus', 'finalStatus', 'cyclesCollected'));
+        $this->viewBuilder()->setLayout('vite');
     }
 }

@@ -11,7 +11,7 @@ This project explores and describes practical applications and uses of CakePHP 5
 Requirements
 ------------
 
-* PostgreSQL 13
+* PostgresSQL 13
 * CakePHP 5.x
 * PHP >= 8.3
 * NodeJS 18

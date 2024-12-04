@@ -6,6 +6,7 @@ This project explores and describes practical applications and uses of CakePHP 5
 
 * [Dynamic Enums (CakePHP 5 / PHP 8.3)](Documentation/CakePHP-Enums.md)
 * [Generate JWT with CakePHP and Authenticate on NodeJS](Documentation/CakePHP-JWT.md)
+* [Integrate Vite for front side in CakePHP](Documentation/CakePHP-Vite-Integration.md)
 
 Requirements
 ------------

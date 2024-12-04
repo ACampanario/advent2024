@@ -99,7 +99,7 @@ class PagesController extends AppController
             ->identifiedBy('4f1g23a12aa')
             ->issuedAt($now)
             ->expiresAt($now->modify('+1 hour'))
-            ->withClaim('uid', 'this is an example of generated JWT in CakePHP and decoded on a node app')
+            ->withClaim('uid', 'Generated JWT in CakePHP and decoded on a node app')
             ->getToken($configuration->signer(), $configuration->signingKey())
             ->toString();
 

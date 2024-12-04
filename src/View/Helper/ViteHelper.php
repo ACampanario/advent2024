@@ -81,9 +81,15 @@ class ViteHelper extends Helper
            return implode('', $firstBlock) . implode('', $secondBlock);
        } else {
            $domain = file_get_contents(WWW_ROOT . 'hot');
-           $head = $this->Html->script($domain . '/@vite/client', ['rel' => 'preload', 'type' => 'module']);
+           $head = $this->Html->script(
+               $domain . '/@vite/client',
+               ['rel' => 'preload', 'type' => 'module']
+           );
            $head .= $this->Html->css($domain . '/resources/css/app.css');
-           $head .= $this->Html->script($domain . '/resources/js/app.js', ['rel' => 'preload', 'type' => 'module']);
+           $head .= $this->Html->script(
+               $domain . '/resources/js/app.js',
+               ['rel' => 'preload', 'type' => 'module']
+           );
 
            return $head;
        }

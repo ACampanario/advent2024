@@ -8,7 +8,6 @@ user@advent2024-web:/var/www/html/node$ node app.js
 
 
 <div id="message"></div>
-
 <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
 <script type="module">
     const socket = io('https://advent2024.ddev.site:8182/', {
@@ -23,6 +22,5 @@ user@advent2024-web:/var/www/html/node$ node app.js
     socket.on('connect_error', (err) => {
         document.getElementById('message').innerHTML = 'Error connecting to the server';
     });
-
 </script>
 
